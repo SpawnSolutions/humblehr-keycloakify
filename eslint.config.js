@@ -45,4 +45,13 @@ export default typescriptEslint.config(
       "import/no-anonymous-default-export": "off",
     },
   },
+  {
+    files: ["emails/**"],
+    rules: {
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-empty-object-type": "off",
+      "react-refresh/only-export-components": "off",
+      "react/no-unescaped-entities": "off",
+    },
+  },
 );
