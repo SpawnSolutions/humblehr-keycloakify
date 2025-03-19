@@ -32,21 +32,23 @@ export const previewProps: TemplateProps = {
     themeName: "humblehr"
 };
 
-export const templateName = "Email Verification";
+export const templateName = "Reset Password";
 
-const { exp } = createVariablesHelper("email-verification.ftl");
+const { exp } = createVariablesHelper("password-reset.ftl");
 
 export const Template = ({ locale }: TemplateProps) => (
-    <EmailLayout preview={`HumbleHR Verify email`} locale={locale}>
+    <EmailLayout preview={`HumbleHR Reset Password`} locale={locale}>
         <Container style={container}>
             <Text style={paragraph}>
-                Someone has created a <b>{exp("user.email")}</b> account with this email
-                address. If this was you, click the link below to verify your email
-                address
+                Someone just requested to change your <b>{exp("user.email")}</b> account's
+                credentials.
+            </Text>
+            <Text style={paragraph}>
+                If this was you, click on the link below to reset them.
             </Text>
             <Section style={{ textAlign: "center", paddingBlock: "16px" }}>
                 <Link href={exp("link")} style={{ fontSize: "18px" }}>
-                    Click to verify e-mail address
+                    Link to reset password
                 </Link>
             </Section>
             <Text style={paragraph}>
@@ -54,7 +56,8 @@ export const Template = ({ locale }: TemplateProps) => (
                 <b>{exp("linkExpirationFormatter(linkExpiration)")}.</b>
             </Text>
             <Text style={paragraph}>
-                If you didn't create this account, just ignore this message.
+                If you don't want to reset your credentials, just ignore this message and
+                nothing will be changed.
             </Text>
         </Container>
     </EmailLayout>
@@ -65,7 +68,7 @@ export const getTemplate: GetTemplate = async props => {
 };
 
 export const getSubject: GetSubject = async _props => {
-    return "Verify email";
+    return "Reset password";
 };
 // import { GetSubject, GetTemplate } from "keycloakify-emails";
 

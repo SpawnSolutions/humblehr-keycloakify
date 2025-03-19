@@ -6,6 +6,9 @@ import type { KcContextExtension, KcContextExtensionPerPage } from "./KcContext"
 import { themeNames, kcEnvDefaults } from "../kc.gen";
 
 const kcContextExtension: KcContextExtension = {
+    client: {
+        baseUrl: ""
+    },
     themeName: themeNames[0],
     properties: {
         ...kcEnvDefaults

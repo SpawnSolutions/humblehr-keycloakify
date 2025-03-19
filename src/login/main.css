@@ -110,3 +110,38 @@ body.kcBodyClass {
 .kcLabelClass {
     font-size: 14px;
 }
+
+#social-facebook::after {
+    /* border-color: #1877f2; */
+    /* border-width: 1px; */
+}
+
+#social-facebook:hover {
+    color: #1877f2;
+    ::after {
+        border-bottom-color: #1877f2;
+    }
+}
+
+#social-facebook > i {
+    color: #1877f2;
+}
+
+#kc-info-wrapper {
+    font-size: 1.1em;
+}
+
+#kc-social-providers > h2 {
+    font-size: 1.3em;
+}
+
+#kc-registration {
+    padding-bottom: 10px;
+}
+#kc-registration-link {
+    margin-left: 0;
+    &:hover {
+        color: white;
+    }
+    
+}

@@ -13,7 +13,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-    render: () => <KcPageStory />
+    render: () => <KcPageStory kcContext={{
+        client: {
+            baseUrl: 'https://dev.humble.hr'
+        },
+    }} />
 };
 
 export const WithInvalidCredential: Story = {
@@ -22,6 +26,9 @@ export const WithInvalidCredential: Story = {
             kcContext={{
                 login: {
                     username: "johndoe"
+                },
+                client: {
+                    baseUrl: 'https://dev.humble.hr'
                 },
                 messagesPerField: {
                     // NOTE: The other functions of messagesPerField are derived from get() and
